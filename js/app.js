@@ -33,10 +33,11 @@ if (hashrate != 0){
 fetch(paymentUrl, {method: 'get'})
 .then((res) => res.json())
 .then((response) =>{
-  var data = response.data;
+  var data = response.data; 
   document.getElementById('list1').innerHTML = data.length;
-  document.getElementById('list2').innerHTML = data[0].date;
+  document.getElementById('list2').innerHTML = Date(data[0].date);
   document.getElementById('list3').innerHTML = data[0].txHash;
   document.getElementById('list4').innerHTML = data[0].amount;
+  document.getElementById('list5').innerHTML = data.length*0.05 + ' ETH';
 
 });
